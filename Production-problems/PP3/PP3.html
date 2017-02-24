@@ -1,102 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+	
 <title>PP3 - HTML Form - Komarov, Denis</title>
 
 <style>
 
-form {
-  /* Just to center the form on the page */
+form 
+{
+  /*To center the form on the page*/
   margin: 0 auto;
-  width: 425px;
-  /* To see the outline of the form */
+  /*Adjust the width of the form*/
+  width: 325px;
+  /*To see the outline of the form*/ 
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;
 }
 
-form div + div {
+form div + div 
+{
   margin-top: 1em;
 }
 
-label {
-  /* To make sure that all labels have the same size and are properly aligned */
-  display: inline-block;
-  width: 90px;
+label 
+{
+  /*To make sure that all labels have the same size and are properly aligned*/
+  display: inline;
+  width: 30px;
   text-align: right;
 }
 
-input, textarea {
-  /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
+input, textarea
+{
+  /*Establish same font between all text areas*/
   font: 1em sans-serif;
 
   /* To give the same size to all text fields */
-  width: 300px;
+  width: 175px;
   box-sizing: border-box;
 
   /* To harmonize the look & feel of text field border */
   border: 1px solid #999;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus 
+{
   /* To give a little highlight on active elements */
   border-color: #000;
 }
 
-textarea {
+textarea 
+{
   /* To properly align multiline text fields with their labels */
   vertical-align: top;
 
   /* To give enough room to type some text */
   height: 5em;
+  
 }
 
-.button {
+.button 
+{
   /* To position the buttons to the same position of the text fields */
   padding-left: 90px; /* same size as the label elements */
 }
 
-button {
+button
+{
   /* This extra margin represent roughly the same space as the space
      between the labels and their text fields */
   margin-left: .5em;
 }
 
-h2 {
-  margin-left: 33%;
+h1
+{
+  margin-left: 43%;
 }
 
-
-
-
 </style>
-
-
-
 </head>
+
 <body>
-
-<h2>My Info</h2>
-
-<form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="POST">
-
-
-        
-
-First name:  <input type="text" name="first_name_field" placeholder="First Name" ><br/>
-
-Last name:  <input type="text" name="last_name_field" placeholder="Last Name" ><br/>
-
-Phone Number:  <input type="text" name="phone_field" placeholder="(XXX)XXX-XXXX"><br><br/>
-
-Email Address:  <input type="text" name="email_field" placeholder="someone@somewhere.something"><br/>
-
-Gender: Male<input type="radio" name="gender_field" value="Male"> &emsp; &emsp; &emsp; &ensp; &thinsp;Female<input type="radio" name="gender_field" value="Female">
-
-
-Age:  <select name="age_field">
+   <section id="form">
+            <h1>Volunteer Form</h1>
+            <form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="POST">
+                    <fieldset id="myinfo">
+                        <legend><strong>My Info</strong></legend>
+                        <label>First Name:&emsp;&ensp;&thinsp;&thinsp;</label><input type="text" name="first_name_field" placeholder="First Name"><br/>
+                        <label>Last Name:&emsp;&ensp;&nbsp;&thinsp;</label><input type="text" name="last_name_field" placeholder="Last Name"><br/>
+                        <label>Phone Number:&nbsp;</label><input type="tel" name="phone_field" placeholder="XXX-XXX-XXXX"><br/>
+                        <label>Email Address:&thinsp;&thinsp;</label><input type="email" name="email_field" placeholder="example@example.com"><br/>
+                        <p id="genderRadioButtons">
+                            <label>Gender:</label>
+                            <label>Male</label><input type="radio" name="gender_field" value="Male">
+                            <label>&emsp;&emsp;&emsp;&ensp;Female</label><input type="radio" name="gender_field" value="Female">
+                        </p>
+                        <p id="ageDropMenu">
+                            <label>Age:</label>
+                            <select name="age_field">
                                 <option selected disabled>Select Age</option>
                                 <option value="Under 18">Under 18</option>
                                 <option value="18-24">18-24</option>
@@ -106,38 +109,39 @@ Age:  <select name="age_field">
                                 <option value="55-64">55-64</option>
                                 <option value="65 and Over">65 and Over</option>
                             </select>
-          
-</form>
+                        </p>
+                    </fieldset>
+    <br/>
 
-
-<h2>My Availability</h2>
-
-<form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="POST"> 
-  <div>
-    Days Available: <br/> <br/>
-     
-                        Sunday <input type="checkbox" name="available_field[]" value="Sunday"><br>
-                       Monday <input type="checkbox" name="available_field[]" value="Monday"><br>
-                        Tuesday <input type="checkbox" name="available_field[]" value="Tuesday"><br>
-                       Wednesday <input type="checkbox" name="available_field[]" value="Wednesday"><br>
-                        Thursday <input type="checkbox" name="available_field[]" value="Thursday"><br>
-                       Friday <input type="checkbox" name="available_field[]" value="Friday"><br>
-                        Saturday <input type="checkbox" name="available_field[]" value="Saturday"><br> <br/>
+  		<fieldset id = "Availability">
+  		
+  			<legend><strong>My Availability</strong></legend>
+  			
+  			<p>
+   			 <label>Days Available:</label><br/><br/>
+     		 <label>Sunday</label><input type="checkbox" name="available_field[]" value="Sunday"><br>
+             <label>Monday</label><input type="checkbox" name="available_field[]" value="Monday"><br>
+             <label>Tuesday</label><input type="checkbox" name="available_field[]" value="Tuesday"><br>
+             <label>Wednesday</label><input type="checkbox" name="available_field[]" value="Wednesday"><br>
+             <label>Thursday</label><input type="checkbox" name="available_field[]" value="Thursday"><br>
+             <label>Friday</label><input type="checkbox" name="available_field[]" value="Friday"><br>
+             <label>Saturday</label><input type="checkbox" name="available_field[]" value="Saturday"><br><br/>
+            <p>
                        
-                    
-    
-  </div>
- 
+             <label>Comments:</label><br>
+             
+             	<textarea name="comments_field" placeholder="Comments" id="commentsbox"></textarea>
+             
+             		<p>
+                		<input type="hidden" name="hidden_field" value="dkomarov">
+             		</p>
+  				
+  				<input type="submit" value="Submit">
   
-                        Comments:<br>
-                        <textarea cols="30" rows="10" name="comments_field" placeholder="Comments" id="commentsbox"></textarea>
-                    
-                    <p>
-                        <input type="hidden" name="hidden_field" value="dkomarov">
-                    </p>
-  <input type="submit" value="Submit">
-</form>
+  		</fieldset>
+	
+	</form>
 
-
+    </section>
 </body>
 </html>
