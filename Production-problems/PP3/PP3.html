@@ -12,7 +12,7 @@ form
   /*To center the form on the page*/
   margin: 0 auto;
   /*Adjust the width of the form*/
-  width: 325px;
+  width: 375px;
   /*To see the outline of the form*/ 
   padding: 1em;
   border: 1px solid #CCC;
@@ -38,7 +38,7 @@ input, textarea
   font: 1em sans-serif;
 
   /* To give the same size to all text fields */
-  width: 175px;
+  width: 225px;
   box-sizing: border-box;
 
   /* To harmonize the look & feel of text field border */
@@ -76,7 +76,11 @@ button
 
 h1
 {
-  margin-left: 43%;
+  margin-left: 27%;
+}
+
+.inputs_table  input[type="radio"] {
+    width: 20px;       
 }
 
 </style>
@@ -84,21 +88,26 @@ h1
 
 <body>
    <section id="form">
-            <h1>Volunteer Form</h1>
             <form action="http://bloomingdale.sat.iit.edu/kriedan/lab3formscript.php" method="POST">
+                <h1>Volunteer Form</h1>
                     <fieldset id="myinfo">
                         <legend><strong>My Info</strong></legend>
-                        <label>First Name:&emsp;&ensp;&thinsp;&thinsp;</label><input type="text" name="first_name_field" placeholder="First Name"><br/>
-                        <label>Last Name:&emsp;&ensp;&nbsp;&thinsp;</label><input type="text" name="last_name_field" placeholder="Last Name"><br/>
-                        <label>Phone Number:&nbsp;</label><input type="tel" name="phone_field" placeholder="XXX-XXX-XXXX"><br/>
-                        <label>Email Address:&thinsp;&thinsp;</label><input type="email" name="email_field" placeholder="example@example.com"><br/>
-                        <p id="genderRadioButtons">
-                            <label>Gender:</label>
-                            <label>Male</label><input type="radio" name="gender_field" value="Male">
-                            <label>&emsp;&emsp;&emsp;&ensp;Female</label><input type="radio" name="gender_field" value="Female">
-                        </p>
-                        <p id="ageDropMenu">
-                            <label>Age:</label>
+                        	<label>&thinsp;First Name:&emsp;&ensp;&thinsp;&thinsp;</label><input type="text" name="first_name_field" placeholder="First Name"><br/>
+                        	<label>&thinsp;Last Name:&emsp;&ensp;&nbsp;&thinsp;</label><input type="text" name="last_name_field" placeholder="Last Name"><br/>
+                        	<label>&thinsp;Phone Number:&nbsp;</label><input type="tel" name="phone_field" placeholder="(XXX)XXX-XXXX"><br/>
+                        	<label>&thinsp;Email Address:&thinsp;&thinsp;</label><input type="email" name="email_field" placeholder="example@example.com"><br/>
+                        
+                        <table class="inputs_table">
+                         	<tbody>
+                         		<tr>
+                            		<td>
+                           				 <label>Gender: Male</label><input type="radio" name="gender_field" value="Male">&nbsp;<label>Female</label><input type="radio" class="radio_class" name="gender_field" value="Female">
+                            		</td>
+                        		</tr>
+                       	    </tbody>
+                        </table>
+                        
+                            <label>&thinsp;Age:</label>
                             <select name="age_field">
                                 <option selected disabled>Select Age</option>
                                 <option value="Under 18">Under 18</option>
@@ -109,38 +118,32 @@ h1
                                 <option value="55-64">55-64</option>
                                 <option value="65 and Over">65 and Over</option>
                             </select>
-                        </p>
-                    </fieldset>
-    <br/>
+                    
+                    </fieldset><br/>
 
   		<fieldset id = "Availability">
   		
   			<legend><strong>My Availability</strong></legend>
   			
-  			<p>
-   			 <label>Days Available:</label><br/><br/>
-     		 <label>Sunday</label><input type="checkbox" name="available_field[]" value="Sunday"><br>
-             <label>Monday</label><input type="checkbox" name="available_field[]" value="Monday"><br>
-             <label>Tuesday</label><input type="checkbox" name="available_field[]" value="Tuesday"><br>
-             <label>Wednesday</label><input type="checkbox" name="available_field[]" value="Wednesday"><br>
-             <label>Thursday</label><input type="checkbox" name="available_field[]" value="Thursday"><br>
-             <label>Friday</label><input type="checkbox" name="available_field[]" value="Friday"><br>
-             <label>Saturday</label><input type="checkbox" name="available_field[]" value="Saturday"><br><br/>
-            <p>
-                       
-             <label>Comments:</label><br>
+   			 <label>&thinsp;Days Available:</label><br/>
+     		 <label>&thinsp;Sunday</label><input type="checkbox" name="available_field[]" value="Sunday"><br>
+             <label>&thinsp;Monday</label><input type="checkbox" name="available_field[]" value="Monday"><br>
+             <label>&thinsp;Tuesday</label><input type="checkbox" name="available_field[]" value="Tuesday"><br>
+             <label>&thinsp;Wednesday</label><input type="checkbox" name="available_field[]" value="Wednesday"><br>
+             <label>&thinsp;Thursday</label><input type="checkbox" name="available_field[]" value="Thursday"><br>
+             <label>&thinsp;Friday</label><input type="checkbox" name="available_field[]" value="Friday"><br>
+             <label>&thinsp;Saturday</label><input type="checkbox" name="available_field[]" value="Saturday"><br><br/>
+            
+            <label>&thinsp;Comments:</label><br/>
+             &thinsp;<textarea name="comments_field" placeholder="Comments" id="commentsbox"></textarea>
              
-             	<textarea name="comments_field" placeholder="Comments" id="commentsbox"></textarea>
-             
-             		<p>
-                		<input type="hidden" name="hidden_field" value="dkomarov">
-             		</p>
-  				
-  				<input type="submit" value="Submit">
+            <input type="hidden" name="hidden_field" value="dkomarov"><br><br/>
+             	
+  			 &thinsp;<input type="submit" value="Send Me">
   
   		</fieldset>
 	
-	</form>
+		</form>
 
     </section>
 </body>
